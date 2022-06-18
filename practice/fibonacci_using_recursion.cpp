@@ -8,6 +8,9 @@ int fib(int a)
     else
         return fib(a-2) + fib(a-1); 
 }
+//fib(3) + fib(4)
+//fib(3) + fib(4) + fib(2) + fib(3)
+//we are calling this functions many times {fib (3)} so its not efficient so, its bettter to use loops for this kind of problems.
 int main()
 {
     int n;
