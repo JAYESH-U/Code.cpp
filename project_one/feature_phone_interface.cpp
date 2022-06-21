@@ -3,6 +3,7 @@
 #include<iostream>
 #include<conio.h>
 #include<stdlib.h>
+#include<ctime>
 
 using namespace std;
 
@@ -90,7 +91,23 @@ int contact()  //contacts........
 
 int calender()
 {
-    //code......
+    int ca;
+    while(1)
+    {
+        system("CLS");
+        time_t now= time(0);
+        char *dt = ctime(&now);
+        cout<<"the local time is : "<<dt<<endl;
+        tm *gm = gmtime (&now); 
+        dt = asctime(gm);
+        cout<<"the UTC date and time is : "<<dt<<endl;
+        cout<<"0.back\n:";
+        cin>>ca;
+        if(ca==0)
+            return 0;
+        else
+            cout<<"invalid choice....";
+    }
 }
 
 int alaram()
@@ -281,7 +298,7 @@ int main()
     while(1)
     {
         system("CLS");
-        cout<<"hello Jayesh\n choose one of the options: \n 1.Menu\n 2.Contacts\n 3.Exit\n:";
+        cout<<"hello User..\n choose one of the options: \n 1.Menu\n 2.Contacts\n 3.Exit\n:";
         cin>>a;
         if(a!=3)
             if(a==1)
