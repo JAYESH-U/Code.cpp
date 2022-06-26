@@ -344,7 +344,7 @@ int bluetooth()     //bluetooth....
     }
 }
 
-int extra()     
+int extra()     //extra...
 {
     system("CLS");
     int e;
@@ -379,7 +379,7 @@ int camera()        //camera........
     }
 }
 
-int calculator()
+int calculator()       //calculator..
 {
     char ch;
     float n[100],sum=0,mean=0,pro=1,sq,rem=0,dev=0;
@@ -427,16 +427,78 @@ int calculator()
     }
 }
 
-int games()
+int Rock_paper_scissor()
+{
+    int random_no,uc,cc,u;
+    while(1)
+    {
+        system("CLS");
+        srand(time(0));
+        random_no = rand() % 3;
+        cc = random_no;
+        cout<<"Enter your choice :\t4.exit. \n0.Rock,\n1.paper\n2.scissor\n:";
+        cin>>uc;
+        if(uc==4)
+            return 0;
+        if(uc==0 || uc==1 || uc==2)
+        {
+            if(uc==cc)
+                cout<<"its a tie";
+            else
+            {
+                if(uc==0)
+                {
+                    cout<<"user choice = Rock."<<endl;
+                    if(uc==0 && cc==1)
+                        cout<<"compiler choice = Paper.\nPaper covers the rock and compiler wins.";
+                    else if(uc==0 && cc==2)
+                        cout<<"compiler choice = scissor.\nRock break the scissor and you win.";
+                }
+                else if(uc==1)
+                {
+                    cout<<"user choice = Paper."<<endl;
+                    if(uc==1 && cc ==0)
+                        cout<<"compiler choice = Rock.\nPaper covers the rock and you win.";
+                    else if(uc==1 && cc==2)
+                        cout<<"compiler choice = scissor.\nscissor cut the paper and compiler wins.";
+                }
+                else
+                {
+                    cout<<"user choice = scissor."<<endl;
+                    if(uc==2 && cc==0)
+                        cout<<"compiler choice = Rock.\nRock breaks the scissor and compiler wins.";
+                    else if(uc==2 && cc==1)
+                        cout<<"compiler choice = Paper.\nscissor cuts the paper and you win.";
+                }
+            }
+        }
+        else
+            cout<<"invalid choice.....";
+        start:
+        cout<<"\n\n1.play again.\n0.back\n:";
+        cin>>u;
+        if(u==0)
+            return 0;
+        else if(u==1)
+            continue;
+        else
+            cout<<"invalid choice....";
+        goto start;
+    }   
+}
+
+int games()     //games...choice...
 {
     int g;
     while(1)
     {
         system("CLS");
-        cout<<"install some games to play..\n0.back\n:";
+        cout<<"1.Rock paper scissor.\n0.back\n:";
         cin>>g;
         if(g==0)
             return 0;
+        else if(g==1)
+            Rock_paper_scissor();
         else
             cout<<"invalid choice.."<<endl;
     }
