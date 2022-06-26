@@ -387,13 +387,14 @@ int calculator()       //calculator..
     system("CLS");
     while(1)
     {
-        system("CLS");
-        cout<<"1.proceed\n0.back\n:";
+        cout<<"\n1.proceed\n0.back\n:";
         cin>>a;
+        cout<<"\n";
         if(a==0)
             return 0;
         else if(a==1)
         {
+            system("CLS");
             cout<<"enter the number of operands : ";
             cin>>a;
             cout<<"enter the operator : ";
@@ -427,7 +428,7 @@ int calculator()       //calculator..
     }
 }
 
-int Rock_paper_scissor()
+int Rock_paper_scissor()        //game.....1...
 {
     int random_no,uc,cc,u;
     while(1)
