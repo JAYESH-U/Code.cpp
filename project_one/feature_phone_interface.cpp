@@ -37,7 +37,206 @@ int history()      //call history..........
     }
 }
 
-int setting()      //settings.......
+//settings.......
+
+int wallpaper()     //wallpaper..
+{
+    int w,so,ba;
+    while(1)
+    {
+        system("CLS");
+        cout<<"1.change wallpaper \n0.back \n:"<<endl;
+        cin>>w;
+        if(w==0)
+            return 0;
+        else if(w==1)
+        {   
+            start:
+            system("CLS");
+            cout<<"choose the source : \n1.gallery \n2.camera \n0.back \n:"<<endl;
+            cin>>so;
+            if(so==0)
+                return 0;
+            else if(so==1)
+            {
+                system("CLS");
+                cout<<"photos not found....\n0.back\n:";
+                cin>>ba;
+                if(ba==0)
+                    goto start;
+            }
+            else if(so==2)
+            {
+                system("CLS");
+                cout<<"camera is not available in your device..\n0.back\n:";
+                cin>>ba;
+                if(ba==0)
+                    goto start;
+            }
+            else
+                cout<<"invalid choice..";
+        }
+    }
+}
+
+int calender()      //calender....extra and phone.......
+{
+    int ca;
+    while(1)
+    {
+        system("CLS");
+        time_t now= time(0);
+        char *dt = ctime(&now);
+        cout<<"the local time is : "<<dt<<endl;
+        tm *gm = gmtime (&now); 
+        dt = asctime(gm);
+        cout<<"the UTC date and time is : "<<dt<<endl;
+        cout<<"0.back\n:";
+        cin>>ca;
+        if(ca==0)
+            return 0;
+        else
+            cout<<"invalid choice....";
+    }
+}
+
+
+int flight_mode()       //flight mode....
+{
+    int fm=0,fms;
+    while(1)
+    {
+        system("CLS");
+        cout<<"Flight mode : ";
+        if(fm==0)
+            cout<<"off"<<endl;
+        else
+            cout<<"on"<<endl;
+        cout<<"1.change flight mode settings.\n0.back\n:";
+        cin>>fms;
+        if(fms==0)
+            return 0;
+        else if(fms==1)
+        {
+            system("CLS");
+            cout<<"1.on\n2.off\n0.back\n:";
+            cin>>fms;
+            if(fms==0)
+                continue;
+            else if(fms==1)
+                    fm=1;   //on
+            else if(fms==2)
+                    fm=0;   //off
+            else
+                cout<<"invalid choice.."<<endl;
+        }
+        else
+            cout<<"invalid choice.."<<endl;
+    }
+}
+
+int phone()     //phone...settings
+{
+    int ph;
+    while(1)
+    {
+        system("CLS");
+        cout<<"1.Date and Time \n2.flight mode \n0.back:";
+        cin>>ph;
+        if(ph==0)
+            return 0;
+        else if(ph==1)
+            calender();
+        else if(ph==2)
+            flight_mode();
+        else
+            cout<<"invalid choice...";
+    }
+}
+
+int display()       //display...
+{
+    int d;
+    while(1)
+    {
+        system("CLS");
+        cout<<"1.Wallpaper \n0.back\n:"<<endl;
+        cin>>d;
+        if(d==1)
+            wallpaper();
+        else if(d==0)
+            return 0;
+        else
+            cout<<"invalid choice..";
+    }
+}
+
+int language()      //language..
+{
+    int l;
+    while(1)
+    {
+        system("CLS");
+        cout<<"currently ENGLISH is the only laguage available on your device\n0.back\n:";
+        cin>>l;
+        if(l==0)
+            return 0;
+        else
+            cout<<"invalid choice...";
+    }
+}
+
+int specifications()        //specifications..
+{
+    int sp;
+    while(1)
+    {
+        system("CLS");
+        cout<<"Device name	WEAPON-OF-DRAGONS\nProcessor	AMD Ryzen 5 3600 6-Core Processor                 3.59 GHz\nInstalled RAM	8.00 GB\nDevice ID	25B6B8B9-07E3-4F7D-B346-53A94C6B8BE9Product ID	00331-10000-00001-AA091\nSystem type	64-bit operating system, x64-based processor\nPen and touch	No pen or touch input is available for this display\n";
+        cout<<"0.back\n:";
+        cin>>sp;
+        if(sp==0)
+            return(0);
+        else
+            cout<<"invalid choice...";
+    }
+}
+
+int software()      //software...
+{
+    int so;
+    while(1)
+    {
+        system("CLS");
+        cout<<"windows 10 pro \n0.back\n:";
+        cin>>so;
+        if(so==0)
+            return(0);
+        else
+            cout<<"invalid choice...";
+    }
+}
+
+int about()     //about..
+{
+    int ab;
+    while(1)
+    {
+        system("CLS");
+        cout<<"1.specifications \n2.software \n.0.back \n:";
+        cin>>ab;
+        if(ab==0)
+            return 0;
+        else if(ab==1)
+            specifications();
+        else if(ab==2)
+            software();
+        else
+            cout<<"invalid choice..";
+    }
+}
+
+int setting()      //settings..
 {
     
     int s;
@@ -49,11 +248,11 @@ int setting()      //settings.......
         switch (s)
         {
             case 0: return 0;break;
-            //case 1: phone();break;
-            //case 2: display();break;
-            //case 3: language();break;
-            //case 4: about();break;
-            //default : cout<<"invalid choice........"<<endl;
+            case 1: phone();break;
+            case 2: display();break;
+            case 3: language();break;
+            case 4: about();break;
+            default : cout<<"invalid choice........"<<endl;
         }
     }
 }
@@ -89,28 +288,7 @@ int contact()  //contacts........
 
 //extra......
 
-int calender()
-{
-    int ca;
-    while(1)
-    {
-        system("CLS");
-        time_t now= time(0);
-        char *dt = ctime(&now);
-        cout<<"the local time is : "<<dt<<endl;
-        tm *gm = gmtime (&now); 
-        dt = asctime(gm);
-        cout<<"the UTC date and time is : "<<dt<<endl;
-        cout<<"0.back\n:";
-        cin>>ca;
-        if(ca==0)
-            return 0;
-        else
-            cout<<"invalid choice....";
-    }
-}
-
-int alaram()
+int alaram()        //alaram..
 {
     int h=00,m=00,s=00,a;
     while(1)
@@ -132,7 +310,7 @@ int alaram()
     }
 }
 
-int bluetooth()
+int bluetooth()     //bluetooth....
 {
     int bt=0,s;
     while(1)
