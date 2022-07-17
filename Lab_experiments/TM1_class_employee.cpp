@@ -7,7 +7,7 @@ class employee
 	int   emp_num;
 	char  emp_name[20];
 	float emp_basic;
-	float sal;
+	//float sal;
 	float emp_da;
 	float emp_hra;
 	float net_sal;
