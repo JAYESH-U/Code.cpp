@@ -3,10 +3,13 @@ using namespace std;
 int main()
 {
     int *arr;
+    int *p = new int (9);
+    //cout<<*p<<endl;       //p = address and *p = 9..
     int size,i,j,temp;
     cout<<"enter the size of array to be initilized : ";
     cin>>size;
     arr = new int [size];
+    //cout<<*arr<<endl;
     for(i=0;i<size;i++)
         cin>>arr[i];
     for (i=0;i<size;i++)
