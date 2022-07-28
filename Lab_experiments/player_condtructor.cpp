@@ -10,7 +10,7 @@ class player
     public:
     player()        //constructor..
     {
-        system("CLS");
+        //system("CLS");
         cout<<"Enter the name of player : ";
         cin>>name;
         cout<<"Enter the player number : ";
@@ -37,6 +37,7 @@ class player
         for(int i=0;i<NumberOfMatches;i++)
             cout<<"Goals in match "<<i+1<<" : "<<goals[i]<<endl;
         cout<<"\nTotal number of goals by "<<name<<" is : "<<TotalGoals<<endl;
+        delete goals;
     }
     ~player()       //destructor...
     {
