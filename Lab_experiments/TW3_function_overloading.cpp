@@ -31,7 +31,7 @@ int main()
 	cin>>r;
 	cout<<"Enter base and height of triangle : ";
 	cin>>bs>>ht;
-	cout<<"Area of square is : "<<area(s);
+	cout<<"\nArea of square is : "<<area(s);
 	cout<<"\nArea of rectangle is : "<<area(l,b);
     cout<<"\nArea of circle is : "<<area(r);
     cout<<"\nArea of triangle is : "<<area(bs,ht)<<endl;
