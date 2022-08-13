@@ -62,10 +62,12 @@ void search(books b[], int n)
             cout << "Publisher name : " << b[i].publisher << endl;
             cout << "price of the book : " << b[i].price << endl;
             cout << "Stock present : " << b[i].stock << endl;
+            break;
         }
         else
         {
-            cout << "Book is not present..." << endl;
+            cout << " Book is not present..." << endl;
+            //break;
         }
     }
 }
