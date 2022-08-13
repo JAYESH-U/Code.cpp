@@ -13,7 +13,7 @@ public:
     float price;
     void loadbooks();
     void display();
-    void search(books, int);
+    friend void search(books, int);
 };
 
 void books ::loadbooks()
