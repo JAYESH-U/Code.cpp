@@ -1,3 +1,4 @@
+//initializing the objects at a run time
 #include <iostream>
 using namespace std;
 
