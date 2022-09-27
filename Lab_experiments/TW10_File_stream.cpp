@@ -21,9 +21,11 @@ int main()
     }
 
     cout << "File created successfully." << endl;
+
     // write text into file
     instream = "Welcome_to_C++_programming.";
     file << instream;
+    
     // closing the file
     file.close();
 
