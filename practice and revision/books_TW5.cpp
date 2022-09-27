@@ -53,8 +53,8 @@ void search(books b[], int n)
     cin >> aname;
     for (int i = 0; i < n; i++)
     {
-        cout << endl
-             << b[i].bookname;
+        //cout << endl
+        //     << b[i].bookname;
         if ((strcmp(bname, b[i].bookname) == 0) && (strcmp(aname, b[i].author) == 0)) // need only char constants to compare
         {
             cout << "\n-------------------------------\n";
@@ -66,10 +66,7 @@ void search(books b[], int n)
             break;
         }
         else
-        {
-            cout << " Book is not present..." << endl;
-            // break;
-        }
+            continue;
     }
 }
 

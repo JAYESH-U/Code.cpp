@@ -1,47 +1,48 @@
-#include<iostream>
-#include<conio.h>
+#include <iostream>
+#include <conio.h>
 using namespace std;
 
 class player
 {
-    int PlayerNumber,NumberOfMatches,TotalGoals;
+    int PlayerNumber, NumberOfMatches, TotalGoals;
     string name;
     int *goals;
-    public:
-    player()        //constructor..
+
+public:
+    player() // constructor..
     {
-        //system("CLS");
-        cout<<"Enter the name of player : ";
-        cin>>name;
-        cout<<"Enter the player number : ";
-        cin>>PlayerNumber;
-        cout<<"Enter the number of matches played : ";
-        cin>>NumberOfMatches;
-        cout<<endl;
-        goals = new int [NumberOfMatches];
+        // system("CLS");
+        cout << "Enter the name of player : ";
+        cin >> name;
+        cout << "Enter the player number : ";
+        cin >> PlayerNumber;
+        cout << "Enter the number of matches played : ";
+        cin >> NumberOfMatches;
+        cout << endl;
+        goals = new int[NumberOfMatches];
         TotalGoals = 0;
-        for (int i=0;i<NumberOfMatches;i++)
+        for (int i = 0; i < NumberOfMatches; i++)
         {
-            cout<<"Number of goals in match "<<i+1<<" is : ";
-            cin>>goals[i];
+            cout << "Number of goals in match " << i + 1 << " is : ";
+            cin >> goals[i];
             TotalGoals += goals[i];
         }
     }
-    void desplay ()
+    void desplay()
     {
-        cout<<"\n---------------------------------------\n\n";
-        cout<<"Name of the player : "<<name<<endl;
-        cout<<"Player Number : "<<PlayerNumber<<endl;
-        cout<<"Number of matches played : "<<NumberOfMatches<<endl;
-        cout<<endl;
-        for(int i=0;i<NumberOfMatches;i++)
-            cout<<"Goals in match "<<i+1<<" : "<<goals[i]<<endl;
-        cout<<"\nTotal number of goals by "<<name<<" is : "<<TotalGoals<<endl;
+        cout << "\n---------------------------------------\n\n";
+        cout << "Name of the player : " << name << endl;
+        cout << "Player Number : " << PlayerNumber << endl;
+        cout << "Number of matches played : " << NumberOfMatches << endl;
+        cout << endl;
+        for (int i = 0; i < NumberOfMatches; i++)
+            cout << "Goals in match " << i + 1 << " : " << goals[i] << endl;
+        cout << "\nTotal number of goals by " << name << " is : " << TotalGoals << endl;
         delete goals;
     }
-    ~player()       //destructor...
+    ~player() // destructor...
     {
-        cout<<"Destructor executed.."<<endl;
+        cout << "Destructor executed.." << endl;
     }
 };
 

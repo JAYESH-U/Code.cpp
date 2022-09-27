@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     cout << "Smallest Element is : " << sm << endl;
     cout << "sum of all elements is : " << sum << endl;
     cout << "Mean is : " << sum / length << endl;
-    //system("PAUSE");
-    //return EXIT_SUCCESS;
+    // system("PAUSE");
+    // return EXIT_SUCCESS;
     return 0;
 }
