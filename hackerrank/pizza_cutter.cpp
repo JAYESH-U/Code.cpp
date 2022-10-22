@@ -30,6 +30,7 @@ int main()
             }
         }
     }
+    cout<<endl;
 
     for (int i = 0; i < t; i++)
     {
@@ -42,7 +43,7 @@ int main()
                 c[i] += 2;
                 for (int k = j+1; k < n[i]; k++)
                 {
-                    if(d[i][j] == d[i][k] || d[i][j] == (-d[i][k]) || ((360-d[i][j]) == (d[i][k])) || ((360-d[i][j]) == (-d[i][k])))
+                    if(d[i][j] == d[i][k] || d[i][j] == (-d[i][k]) || (360-d[i][j]) == (d[i][k]) || (360-d[i][j]) == (-d[i][k]))
                         c[i] -= 2;
                 }
             }
