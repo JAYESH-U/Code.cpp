@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int t;
+    int t,cnt;
     int *n;
     int **d;
     int *c;
@@ -40,12 +40,16 @@ int main()
         {
             for (int j = 0; j < n[i]; j++)
             {
+                cnt=0;
                 c[i] += 2;
                 for (int k = j+1; k < n[i]; k++)
                 {
-                    if(d[i][j] == d[i][k] || d[i][j] == (-d[i][k]) || (360-d[i][j]) == (d[i][k]) || (360-d[i][j]) == (-d[i][k]))
-                        c[i] -= 2;
+                    if(d[i][j] == d[i][k] || d[i][j] == (-d[i][k]) || (360-d[i][j]) == (d[i][k]) || (360-d[i][j]) == (-d[i][k]) || (360+d[i][j]) == (-d[i][k]) || (360+d[i][j]) == (d[i][k]) || (180-d[i][j]) == (-d[i][k]) || (180+d[i][j]) == (d[i][k]))
+                        cnt++;
                 }
+                cout<<cnt;
+                if(cnt>=1)
+                    c[i] -= 2;
             }
         }
         cout<<c[i];
