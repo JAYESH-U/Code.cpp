@@ -20,9 +20,7 @@ int main()
         cost[j] = c[j] * cf[j];
         rem = c[j];
         for (int i = 0; i < s[j]; i++)
-        {
             cin >> f[j][i] >> r[j][i];
-        }
         for (int i = 0; i < s[j] - 1; i++)
         {
             rem = rem - f[j][i];
