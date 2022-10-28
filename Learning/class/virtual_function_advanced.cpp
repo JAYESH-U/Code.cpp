@@ -15,7 +15,7 @@ public:
         title = s;
         rating = r;
     }
-    virtual void display() {}
+    virtual void display() = 0;
 };
 
 class CWHVideo : public CWH
@@ -40,8 +40,8 @@ class CWHText : public CWH
     int words;
 
 public:
-    //CWH(s,r) -> call the constructor of the base class CWH with values passed by the object djtext
-    CWHText(string s, float r, int wc) : CWH(s, r)      
+    // CWH(s,r) -> call the constructor of the base class CWH with values passed by the object djtext
+    CWHText(string s, float r, int wc) : CWH(s, r)
     {
         words = wc;
     }
