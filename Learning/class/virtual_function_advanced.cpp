@@ -15,7 +15,7 @@ public:
         title = s;
         rating = r;
     }
-    virtual void display() = 0;
+    virtual void display() {}
 };
 
 class CWHVideo : public CWH
