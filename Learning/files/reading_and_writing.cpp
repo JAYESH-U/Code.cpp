@@ -7,11 +7,11 @@ using namespace std;
 void read()
 {
     system("CLS");
+
     string st2,st1;
-    // Opening files using constructor and reading it
-    ifstream in,in1;
+    ifstream in,in1;    // Opening files using constructor and reading it
     in.open("sample60.txt");    // Read operation
-    //in>>st1; //reads only one word.
+    //in>>st1;     //reads only one word.
     getline(in,st1);
     cout<<st1<<endl;
     in.close();
