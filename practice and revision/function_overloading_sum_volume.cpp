@@ -28,5 +28,6 @@ int main()
     cout<<"the volume of cuboid of 3 ,7 and 6 is : "<<vol(3,6,7)<<endl;
     cout<<"the volume of cylinder of radius 3 and height 6 is : "<<vol(3,6)<<endl;
     cout<<"the volume of cube of side 3 is : "<<vol(3)<<endl;
+    cout<<endl;
     return 0;
 }
