@@ -19,13 +19,13 @@
 
 //Each test case is a single line of space-separated integers. The testcase begins with an integer NN, which is the number of slicing offsets in the test, followed by NN integers, D_1D 
 //1
-​
+​//
 // , D_2D 
 //2
-​
+​//
 // , ..., D_nD 
 //n
-​
+​//
 //, each describing an offset the robot will use to slice a pizza.
 
 //Standard output
@@ -60,7 +60,7 @@ using namespace std;
 
 int main()
 {
-    int t,cnt;
+    int t;
     int *n;
     int **d;
     int *c;
@@ -93,16 +93,16 @@ int main()
         if(n[i]==0)
             c[i]=1;
         else
-        for (int j = 0; j < n[i]; j++)
         {
-            cnt=0;
-            c[i] += 2;
-            for (int k = j+1; k < n[i]; k++)
-                if(d[i][j] == d[i][k] || d[i][j] == (-d[i][k]) || (360-d[i][j]) == (d[i][k]) || (360-d[i][j]) == (-d[i][k]) || (360+d[i][j]) == (d[i][k]) || (180-d[i][j]) == (-d[i][k]) || (180+d[i][j]) == (d[i][k]))
-                    cnt++;
-            cout<<cnt;
-            if(cnt>=1)
-                c[i] -= 2;
+            for (int j = 0; j < n[i]; j++)
+            {
+                c[i] += 2;
+                for (int k = j+1; k < n[i]; k++)
+                {
+                    if(d[i][j] == d[i][k] || d[i][j] == (-d[i][k]) || (360-d[i][j]) == (d[i][k]) || (360-d[i][j]) == (-d[i][k]))
+                        c[i] -= 2;
+                }
+            }
         }
         cout<<c[i];
         cout<<endl;
