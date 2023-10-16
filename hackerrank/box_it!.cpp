@@ -19,7 +19,7 @@ using namespace std;
 // Overload operator < as specified
 // bool operator<(Box& b)
 
-// Overload operator << as specified.
+// Overload operator << as specified
 // ostream& operator<<(ostream& out, Box& B)
 class Box
 {
